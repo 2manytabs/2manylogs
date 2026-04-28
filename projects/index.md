@@ -4,6 +4,7 @@ title: Projects
 has_children: true
 nav_order: 2
 toc: false
+has_toc: false
 ---
 
 # 🔧 Projects
