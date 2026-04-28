@@ -1,6 +1,6 @@
 ---
 layout: home
-title: 2manylogs
+title: Home
 ---
 
 # 👋 2manylogs
