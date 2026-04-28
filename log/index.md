@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Log
+nav_order: 3
 ---
 
 # Log
