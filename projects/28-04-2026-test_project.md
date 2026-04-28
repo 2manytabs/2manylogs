@@ -12,13 +12,13 @@ tags: [iot, esp32]
 
 [← Back to Projects](/projects/)
 
-## {{ page.title }}
+## {% if page.status == "done" %}🟢{% else %}🟡{% endif %} {{ page.title }}
 
 **Path:**  
-[Home](/) → [Projects](/projects/) → {{ page.title }}
+[Home](/) / [Projects](/projects/) / {{ page.title }}
 
 **Meta:**  
-{{ page.start_date | date: "%Y-%m-%d" }}{% if page.end_date %} → {{ page.end_date | date: "%Y-%m-%d" }}{% endif %}  
+**{{ page.start_date | date: "%Y-%m-%d" }}{% if page.end_date %} → {{ page.end_date | date: "%Y-%m-%d" }}{% endif %}**  
 {{ page.tags | join: " · " }}
 
 ---
@@ -45,6 +45,20 @@ Short description of what this project is and why it exists.
 - 2026-04-28 — setup  
 - 2026-04-29 — first test  
 
+## 📝 Log / Progress (autolink test)
+
+{% assign logs = site.pages
+  | where_exp: "p", "p.project == page.title"
+  | sort: "date"
+  | reverse %}
+
+{% if logs.size > 0 %}
+{% for log in logs %}
+- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }}){% if log.tags %} — {{ log.tags | join: " · " }}{% endif %}
+{% endfor %}
+{% else %}
+no logs yet
+{% endif %}
 ---
 
 ## 🚧 Notes / Problems
