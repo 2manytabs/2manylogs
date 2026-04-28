@@ -6,3 +6,8 @@ plugins:
   - jekyll-include-cache
 
 minimal_mistakes_skin: dark
+
+header_pages:
+  - index.md
+  - projects/index.md
+  - log/index.md
