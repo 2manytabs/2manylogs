@@ -1,0 +1,11 @@
+/* default labels stay unchanged */
+
+h1 .label,
+h2 .label,
+h3 .label {
+  font-size: 0.7em;        /* smaller */
+  padding: 1px 6px;        /* tighter */
+  margin-left: 6px;        /* spacing from title */
+  vertical-align: middle;  /* align with text */
+  border-radius: 6px;      /* softer look */
+}
