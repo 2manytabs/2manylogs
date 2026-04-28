@@ -17,18 +17,11 @@ toc: false
 ## 🚧 In Progress
 
 {% for p in in_progress %}
-- {{ p.title }} — started {{ p.start_date | date: "%Y-%m-%d" }}
+- [{{ p.title }}]({{ p.url }}) — started {{ p.start_date | date: "%Y-%m-%d" }}
 {% endfor %}
 
 ## ✅ Completed
 
 {% for p in done %}
-- {{ p.title }} — finished {{ p.end_date | date: "%Y-%m-%d" }}
-{% endfor %}
-
----
-## DEBUG
-
-{% for p in site.pages %}
-- {{ p.path }} | url: {{ p.url }} | date: {{ p.date }}
+- [{{ p.title }}]({{ p.url }}) — finished {{ p.end_date | date: "%Y-%m-%d" }}
 {% endfor %}
