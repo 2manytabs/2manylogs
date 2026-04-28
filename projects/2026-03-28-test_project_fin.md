@@ -1,6 +1,7 @@
 ---
 layout: default
 title: test_project_fin
+project_id: test_project_fin
 status: done
 start_date: 2026-03-28
 end_date: 2026-04-28
