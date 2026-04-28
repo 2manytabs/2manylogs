@@ -1,10 +1,6 @@
 title: 2manylogs
 
-remote_theme: just-the-docs/just-the-docs
-
-color_scheme: dark
-
-nav_expand: false
+theme: null
 
 plugins:
   - jekyll-include-cache
