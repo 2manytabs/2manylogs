@@ -40,10 +40,3 @@ no projects yet
 no logs yet
 {% endif %}
 
-
----
-## DEBUG
-
-{% for p in site.pages %}
-- {{ p.path }} | url: {{ p.url }} | date: {{ p.date }}
-{% endfor %}
