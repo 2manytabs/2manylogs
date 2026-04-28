@@ -3,6 +3,7 @@ layout: default
 title: Projects
 has_children: true
 nav_order: 2
+toc: false
 ---
 
 # 🔧 Projects
@@ -16,11 +17,11 @@ nav_order: 2
 ## 🚧 In Progress
 
 {% for p in in_progress %}
-- [{{ p.title }}]({{ p.url }}) — started {{ p.start_date }}
+- {{ p.title }} — started {{ p.start_date | date: "%Y-%m-%d" }}
 {% endfor %}
 
 ## ✅ Completed
 
 {% for p in done %}
-- [{{ p.title }}]({{ p.url }})
+- {{ p.title }} — finished {{ p.end_date | date: "%Y-%m-%d" }}
 {% endfor %}
