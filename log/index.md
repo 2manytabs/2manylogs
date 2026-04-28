@@ -8,10 +8,12 @@ nav_order: 3
 # Log
 
 {% assign logs = site.pages
-  | where_exp: "p", "p.date and p.url contains '/log/'"
+  | where_exp: "p", "p.date"
   | sort: "date"
   | reverse %}
 
 {% for log in logs %}
-- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }}) — {{ log.tags | join: " · " }}
+  {% if log.url contains '/log/' %}
+- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }})
+  {% endif %}
 {% endfor %}
