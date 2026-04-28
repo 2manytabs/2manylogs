@@ -1,0 +1,29 @@
+{% for tag in include.tags %}
+
+  {% assign color = "" %}
+
+  {% for t in site.tag_colors.tech %}
+    {% if t == tag %}
+      {% assign color = "label-blue" %}
+    {% endif %}
+  {% endfor %}
+
+  {% for t in site.tag_colors.activity %}
+    {% if t == tag %}
+      {% assign color = "label-yellow" %}
+    {% endif %}
+  {% endfor %}
+
+  {% for t in site.tag_colors.context %}
+    {% if t == tag %}
+      {% assign color = "label" %}
+    {% endif %}
+  {% endfor %}
+
+  {% if color == "" %}
+    {% assign color = "label-grey" %}
+  {% endif %}
+
+  <span class="label {{ color }}" style="margin-right:4px;">{{ tag }}</span>
+
+{% endfor %}
