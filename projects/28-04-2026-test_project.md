@@ -4,6 +4,7 @@ title: test_project
 status: in-progress
 start_date: 2026-04-28
 nav_exclude: true
+parent: projects
 ---
 
 # Test project
