@@ -1,6 +1,6 @@
 {% for tag in include.tags %}
 
-  {% assign color = "label-grey" %}  {# default fallback #}
+  {% assign color = "label-grey" %}
 
   {% if site.tag_colors.tech contains tag %}
     {% assign color = "label-blue" %}
@@ -10,8 +10,6 @@
     {% assign color = "label" %}
   {% endif %}
 
-  <span class="label {{ color }}" style="display:inline-block;margin-left:6px;">
-    {{ tag }}
-  </span>
+  <span class="label {{ color }}" style="display:inline-block;margin-left:6px;">{{ tag }}</span>
 
 {% endfor %}
