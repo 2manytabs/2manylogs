@@ -4,7 +4,7 @@ remote_theme: just-the-docs/just-the-docs
 
 color_scheme: dark
 
-nav_expand: true
+nav_expand: false
 
 plugins:
   - jekyll-include-cache
