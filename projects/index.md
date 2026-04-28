@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Test
+title: Projects
 ---
 
-# Test
+# 🔧 Projects
 
-{% raw %}
-{% for p in site.pages %}
-- {{ p.path }}
+{% assign projects = site.pages | where_exp: "p", "p.dir == '/projects/' and p.name != 'index.md'" %}
+
+{% for p in projects %}
+- {{ p.title }}
 {% endfor %}
-{% endraw %}
