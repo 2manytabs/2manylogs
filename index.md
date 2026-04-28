@@ -20,7 +20,9 @@ nav_order: 1
     <div style="border: 1px solid #444; border-radius: 10px; padding: 12px; background: #111;">
 
       <div style="font-weight: bold; margin-bottom: 6px;">
-        {% if p.status == "done" %}🟢{% else %}🟡{% endif %}
+
+        {% if p.status == "done" %}🟢{% elsif p.status == "in-progress" %}🟡{% else %}⚪{% endif %} 
+
         {{ p.title }}
       </div>
 
@@ -58,7 +60,7 @@ nav_order: 1
 
     {% assign proj = site.pages | where: "project_id", log.project | first %}
 
-- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }}){% if proj %} — {% if proj.status == "done" %}🟢{% else %}🟡{% endif %} [{{ proj.title }}]({{ proj.url }}){% endif %}{% if log.tags %} — {{ log.tags | join: " · " }}{% endif %}
+- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }}){% if proj.status == "done" %}🟢{% elsif proj.status == "in-progress" %}🟡{% else %}⚪{% endif %} [{{ proj.title }}]({{ proj.url }}){% endif %}{% if log.tags %} — {{ log.tags | join: " · " }}{% endif %}
 
   {% endif %}
 {% endfor %}
