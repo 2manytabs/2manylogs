@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Log
+has_children: true
 nav_order: 3
 ---
 
