@@ -1,28 +1,22 @@
 ---
 ---
 
-.page__content {
-  max-width: 700px;
-  margin: auto;
-}
-
 /* ===== Base ===== */
 body {
   background-color: #0f1115;
   color: #d6d6d6;
-  font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* ===== Content width (important!) ===== */
-.page {
-  max-width: 700px;
+/* ===== Center + readable width ===== */
+.page__content {
+  max-width: 720px;
   margin: auto;
 }
 
 /* ===== Typography ===== */
 h1, h2, h3 {
-  font-weight: 600;
   color: #ffffff;
+  font-weight: 600;
 }
 
 p {
@@ -39,18 +33,14 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== Subtle separators ===== */
-hr {
-  border: none;
-  border-top: 1px solid #2a2f3a;
-  margin: 2rem 0;
+/* ===== Section separators ===== */
+h2 {
+  margin-top: 2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #2a2f3a;
 }
 
 /* ===== Lists (logs/projects) ===== */
-ul {
-  padding-left: 1rem;
-}
-
 li {
   margin-bottom: 0.4rem;
 }
@@ -62,26 +52,7 @@ code {
   border-radius: 4px;
 }
 
-/* ===== Header ===== */
-.site-header {
-  background: #0f1115;
-  border-bottom: 1px solid #2a2f3a;
-}
-
-/* ===== Footer ===== */
-.site-footer {
-  background: #0f1115;
-  border-top: 1px solid #2a2f3a;
-  color: #888;
-}
-
-/* ===== Remove “bloggy” feel ===== */
-.post-meta {
+/* ===== Remove blog feel ===== */
+.page__meta {
   display: none;
-}
-
-h2 {
-  margin-top: 2rem;
-  border-bottom: 1px solid #2a2f3a;
-  padding-bottom: 0.3rem;
 }
