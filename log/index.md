@@ -17,3 +17,10 @@ nav_order: 3
 - {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }})
   {% endif %}
 {% endfor %}
+
+---
+## DEBUG
+
+{% for p in site.pages %}
+- {{ p.path }} | url: {{ p.url }} | date: {{ p.date }}
+{% endfor %}
