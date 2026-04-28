@@ -60,7 +60,7 @@ nav_order: 1
 
     {% assign proj = site.pages | where: "project_id", log.project | first %}
 
-- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }}){% if proj.status == "done" %}🟢{% elsif proj.status == "in-progress" %}🟡{% else %}⚪{% endif %} [{{ proj.title }}]({{ proj.url }}){% endif %}{% if log.tags %} — {{ log.tags | join: " · " }}{% endif %}
+- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }}){% if proj %} — {% if proj.status == "done" %}🟢{% elsif proj.status == "in-progress" %}🟡{% else %}⚪{% endif %} [{{ proj.title }}]({{ proj.url }}){% endif %}{% if log.tags %} — {{ log.tags | join: " · " }}{% endif %}
 
   {% endif %}
 {% endfor %}
