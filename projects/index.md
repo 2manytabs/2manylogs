@@ -25,3 +25,10 @@ toc: false
 {% for p in done %}
 - {{ p.title }} — finished {{ p.end_date | date: "%Y-%m-%d" }}
 {% endfor %}
+
+---
+## DEBUG
+
+{% for p in site.pages %}
+- {{ p.path }} | url: {{ p.url }} | date: {{ p.date }}
+{% endfor %}
