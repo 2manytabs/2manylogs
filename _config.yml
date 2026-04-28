@@ -8,3 +8,9 @@ nav_expand: true
 
 plugins:
   - jekyll-include-cache
+
+
+  tag_colors:
+  tech: [esp32, arduino, jekyll, iot, python]
+  activity: [setup, debug, experiment, build, refactor, research]
+  context: [learning, idea, note]
