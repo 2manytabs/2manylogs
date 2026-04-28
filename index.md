@@ -15,12 +15,13 @@ nav_order: 1
 {% if projects.size > 0 %}
 {% for p in projects %}
   {% if p.url != '/projects/' %}
-- {{ p.date | date: "%Y-%m-%d" }} - [{{ p.title }}]({{ p.url }}) — {{ p.tags | join: " · " }}
+- {{ p.start_date | date: "%Y-%m-%d" }}{% if p.end_date %} → {{ p.end_date | date: "%Y-%m-%d" }}{% endif %} - [{{ p.title }}]({{ p.url }}){% if p.status %} ({{ p.status }}){% endif %} — {{ p.tags | join: " · " }}
   {% endif %}
 {% endfor %}
 {% else %}
 no projects yet
 {% endif %}
+
 
 ---
 
