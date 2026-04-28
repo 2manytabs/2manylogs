@@ -14,13 +14,6 @@ nav_order: 3
 
 {% for log in logs %}
   {% if log.url != '/log/' and log.date %}
-- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }})
+- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }}){% if log.tags %} — {{ log.tags | join: " · " }}{% endif %}
   {% endif %}
-{% endfor %}
-
----
-## DEBUG
-
-{% for p in site.pages %}
-- {{ p.path }} | url: {{ p.url }} | date: {{ p.date }}
 {% endfor %}
