@@ -9,13 +9,13 @@ nav_order: 1
 
 {% assign projects = site.pages
   | where_exp: "p", "p.url contains '/projects/'"
-  | sort: "date"
+  | sort: "start_date"
   | reverse %}
 
 {% if projects.size > 0 %}
 {% for p in projects %}
   {% if p.url != '/projects/' %}
-- {{ p.start_date | date: "%Y-%m-%d" }}{% if p.end_date %} → {{ p.end_date | date: "%Y-%m-%d" }}{% endif %} - [{{ p.title }}]({{ p.url }}){% if p.status %} ({{ p.status }}){% endif %} — {{ p.tags | join: " · " }}
+- {% if p.status == "done" %}🟢{% else %}🟡{% endif %} {{ p.start_date | date: "%Y-%m-%d" }}{% if p.end_date %} → {{ p.end_date | date: "%Y-%m-%d" }}{% endif %} - [{{ p.title }}]({{ p.url }}) — {{ p.tags | join: " · " }}
   {% endif %}
 {% endfor %}
 {% else %}
