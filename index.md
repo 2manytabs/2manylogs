@@ -5,34 +5,34 @@ nav_order: 1
 ---
 
 # 👋 2manylogs
-## 🔧 Latest Project
+## 🔧 Projects
 
-{% assign latest_project = site.pages
-  | where_exp: "p", "p.url contains '/projects/'"
+{% assign projects = site.pages
+  | where_exp: "p", "p.url contains '/projects/' and p.url != '/projects/'"
   | sort: "date"
-  | reverse
-  | first %}
+  | reverse %}
 
-{% if latest_project %}
-- {{ latest_project.date | date: "%Y-%m-%d" }} - [{{ latest_project.title }}]({{ latest_project.url }})  
-  tags: {{ latest_project.tags | join: ", " }}
+{% if projects.size > 0 %}
+{% for p in projects %}
+- {{ p.date | date: "%Y-%m-%d" }} - [{{ p.title }}]({{ p.url }}) — {{ p.tags | join: " · " }}
+{% endfor %}
 {% else %}
 no projects yet
 {% endif %}
 
 ---
 
-## 📝 Latest Log
+## 📝 Logs
 
-{% assign latest_log = site.pages
-  | where_exp: "p", "p.url contains '/log/'"
+{% assign logs = site.pages
+  | where_exp: "p", "p.url contains '/log/' and p.url != '/log/'"
   | sort: "date"
-  | reverse
-  | first %}
+  | reverse %}
 
-{% if latest_log %}
-- {{ latest_log.date | date: "%Y-%m-%d" }} - [{{ latest_log.title }}]({{ latest_log.url }})  
-  tags: {{ latest_log.tags | join: ", " }}
+{% if logs.size > 0 %}
+{% for l in logs %}
+- {{ l.date | date: "%Y-%m-%d" }} - [{{ l.title }}]({{ l.url }}) — {{ l.tags | join: " · " }}
+{% endfor %}
 {% else %}
 no logs yet
 {% endif %}
