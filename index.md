@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Home
+nav_order: 1
 ---
 
 # 👋 2manylogs
