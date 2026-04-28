@@ -7,7 +7,6 @@ nav_order: 3
 ---
 
 # Log
-
 {% assign logs = site.pages
   | where_exp: "p", "p.url contains '/log/'"
   | sort: "date"
@@ -15,6 +14,10 @@ nav_order: 3
 
 {% for log in logs %}
   {% if log.url != '/log/' and log.date %}
-- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }}){% if log.tags %} — {{ log.tags | join: " · " }}{% endif %}
+
+    {% assign proj = site.pages | where: "project_id", log.project | first %}
+
+- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }}){% if proj %} — 📦 [{{ proj.title }}]({{ proj.url }}){% endif %}{% if log.tags %} — {{ log.tags | join: " · " }}{% endif %}
+
   {% endif %}
 {% endfor %}
