@@ -3,7 +3,8 @@
 
 🌐 **Live Site:** https://2manytabs.github.io/
 
-
+---
+Theme Docs: https://just-the-docs.com/
 ---
 # 🏷️ Tagging
 
