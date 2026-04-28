@@ -1,0 +1,2 @@
+# 2manylogs
+my log
