@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Log
+title: all_logs
 has_children: true
 has_toc: false
 nav_order: 3
