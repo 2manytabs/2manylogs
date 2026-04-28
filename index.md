@@ -49,16 +49,16 @@ nav_order: 1
 ## 📝 Logs
 
 {% assign logs = site.pages
-  | where_exp: "p", "p.date"
+  | where_exp: "p", "p.url contains '/log/'"
   | sort: "date"
   | reverse %}
 
-{% if logs.size > 0 %}
-{% for l in logs %}
-- {{ l.date | date: "%Y-%m-%d" }} - [{{ l.title }}]({{ l.url }}) — {{ l.tags | join: " · " }}
+{% for log in logs %}
+  {% if log.url != '/log/' and log.date %}
+
+    {% assign proj = site.pages | where: "project_id", log.project | first %}
+
+- {{ log.date | date: "%Y-%m-%d" }} — [{{ log.title }}]({{ log.url }}){% if proj %} — {% if proj.status == "done" %}🟢{% else %}🟡{% endif %} [{{ proj.title }}]({{ proj.url }}){% endif %}{% if log.tags %} — {{ log.tags | join: " · " }}{% endif %}
+
+  {% endif %}
 {% endfor %}
-{% else %}
-no logs yet
-{% endif %}
-
-
