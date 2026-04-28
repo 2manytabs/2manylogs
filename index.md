@@ -1,37 +1,38 @@
 ---
-layout: default
-title: Home
-nav_order: 1
+layout: home
+title: 2manylogs
 ---
 
 # 👋 2manylogs
 
 ## 🔧 Latest Project
 
-{% assign projects = site.pages | where_exp: "p", "p.path contains 'projects/'" %}
-{% assign projects = projects | where_exp: "p", "p.name != 'index.md'" %}
-{% assign projects = projects | sort: "start_date" | reverse %}
-
-{% assign latest_project = projects | first %}
+{% assign latest_project = site.pages 
+  | where: "parent", "Projects" 
+  | sort: "date" 
+  | reverse 
+  | first %}
 
 {% if latest_project %}
-- [{{ latest_project.title }}]({{ latest_project.url }})  
-  → started {{ latest_project.start_date }}
+- {{ latest_project.date | date: "%Y-%m-%d" }} - [{{ latest_project.title }}]({{ latest_project.url }})  
+  tags: {{ latest_project.tags | join: ", " }}
 {% else %}
-_No projects yet_
+_no projects yet_
 {% endif %}
 
 ---
 
 ## 📝 Latest Log
 
-{% assign logs = site.pages | where_exp: "p", "p.path contains 'log/'" %}
-{% assign logs = logs | sort: "date" | reverse %}
-
-{% assign latest_log = logs | first %}
+{% assign latest_log = site.pages 
+  | where: "parent", "Log" 
+  | sort: "date" 
+  | reverse 
+  | first %}
 
 {% if latest_log %}
-- [{{ latest_log.title }}]({{ latest_log.url }})
+- {{ latest_log.date | date: "%Y-%m-%d" }} - [{{ latest_log.title }}]({{ latest_log.url }})  
+  tags: {{ latest_log.tags | join: ", " }}
 {% else %}
-_No logs yet_
+_no logs yet_
 {% endif %}
