@@ -1,6 +1,7 @@
 ---
 layout: default
 title: test_project
+project_id: test_project
 parent: Projects
 nav_exclude: true
 
