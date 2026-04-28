@@ -28,16 +28,13 @@ no projects yet
 ## 📝 Logs
 
 {% assign logs = site.pages
-  | where_exp: "p", "p.url contains '/log/'"
+  | where_exp: "p", "p.date"
   | sort: "date"
   | reverse %}
 
-
 {% if logs.size > 0 %}
 {% for l in logs %}
-  {% if l.url != '/log/' and l.date %}
 - {{ l.date | date: "%Y-%m-%d" }} - [{{ l.title }}]({{ l.url }}) — {{ l.tags | join: " · " }}
-  {% endif %}
 {% endfor %}
 {% else %}
 no logs yet
