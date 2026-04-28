@@ -1,20 +1,16 @@
 {% for tag in include.tags %}
 
-  {% assign color = "" %}
+  {% assign color = "label-grey" %}  {# default fallback #}
 
-  {% for t in site.tag_colors.tech %}
-    {% if t == tag %}{% assign color = "label-blue" %}{% endif %}
-  {% endfor %}
-  {% for t in site.tag_colors.activity %}
-    {% if t == tag %}{% assign color = "label-yellow" %}{% endif %}
-  {% endfor %}
-  {% for t in site.tag_colors.context %}
-    {% if t == tag %}{% assign color = "label" %}{% endif %}
-  {% endfor %}
+  {% if site.tag_colors.tech contains tag %}
+    {% assign color = "label-blue" %}
+  {% elsif site.tag_colors.activity contains tag %}
+    {% assign color = "label-yellow" %}
+  {% elsif site.tag_colors.context contains tag %}
+    {% assign color = "label" %}
+  {% endif %}
 
-  {% if color == "" %}{% assign color = "label-grey" %}{% endif %}
-
-  <span class="label {{ color }}" style="display:inline-block; margin-left:6px;">
+  <span class="label {{ color }}" style="display:inline-block;margin-left:6px;">
     {{ tag }}
   </span>
 
