@@ -32,9 +32,10 @@ no projects yet
   | sort: "date"
   | reverse %}
 
+
 {% if logs.size > 0 %}
 {% for l in logs %}
-  {% if l.url != '/log/' %}
+  {% if l.url != '/log/' and l.date %}
 - {{ l.date | date: "%Y-%m-%d" }} - [{{ l.title }}]({{ l.url }}) — {{ l.tags | join: " · " }}
   {% endif %}
 {% endfor %}
