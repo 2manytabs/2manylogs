@@ -5,3 +5,9 @@ plugins:
 
 minimal_mistakes_skin: "dark"
 markdown: kramdown
+
+
+header_pages:
+  - index.md
+  - projects/index.md
+  - log/index.md
