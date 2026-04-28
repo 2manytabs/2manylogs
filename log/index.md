@@ -6,7 +6,7 @@ has_toc: false
 nav_order: 3
 ---
 
-# Log
+# all_logs
 {% assign logs = site.pages
   | where_exp: "p", "p.url contains '/log/'"
   | sort: "date"
