@@ -3,6 +3,11 @@
 here will be the index content soon!
 
 
+## 📂 Structure
+- [Log](./log/)
+- [Projects](./projects/)
+
+---
 
 ## 🔧 Projects
 - [28-04-2026_testproject](.projects/28-04-2026-test_project.md)
