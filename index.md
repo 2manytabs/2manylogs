@@ -3,24 +3,34 @@ layout: default
 title: Home
 ---
 
-# index
+# 👋 2manylogs
 
-here will be the index content soon!
+## 🔧 Latest Project
 
+{% assign projects = site.pages | where_exp: "p", "p.path contains 'projects/'" %}
+{% assign projects = projects | where_exp: "p", "p.name != 'index.md'" %}
+{% assign projects = projects | sort: "start_date" | reverse %}
 
-## 📂 Structure
-- [Log](./log)
-- [Projects](./projects)
+{% assign latest_project = projects | first %}
+
+{% if latest_project %}
+- [{{ latest_project.title }}]({{ latest_project.url }})  
+  → started {{ latest_project.start_date }}
+{% else %}
+_No projects yet_
+{% endif %}
 
 ---
 
-## 🔧 Projects
-- [28-04-2026_testproject](./projects/28-04-2026-test_project)
+## 📝 Latest Log
 
-## 📓 Log
-- [2026-04-28_setup day](./log/2026-04-28-setup_day)
+{% assign logs = site.pages | where_exp: "p", "p.path contains 'log/'" %}
+{% assign logs = logs | sort: "date" | reverse %}
 
----
+{% assign latest_log = logs | first %}
 
-## 🔗 Links
-- [GitHub Repo](https://github.com/2manytabs/2manylogs)
+{% if latest_log %}
+- [{{ latest_log.title }}]({{ latest_log.url }})
+{% else %}
+_No logs yet_
+{% endif %}
