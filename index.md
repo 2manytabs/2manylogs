@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 # index
 
 here will be the index content soon!
