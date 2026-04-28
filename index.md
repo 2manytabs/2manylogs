@@ -10,10 +10,10 @@ here will be the index content soon!
 ---
 
 ## 🔧 Projects
-- [28-04-2026_testproject](.projects/28-04-2026-test_project.md)
+- [28-04-2026_testproject](./projects/28-04-2026-test_project.md)
 
 ## 📓 Log
-- [2026-04-28_setup day](.log/2026-04-28-setup_day.md)
+- [2026-04-28_setup day](./log/2026-04-28-setup_day.md)
 
 ---
 
