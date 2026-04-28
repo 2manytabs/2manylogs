@@ -1,4 +1,4 @@
 # 2manylogs
 my log
 
-https://2manytabs.github.io/2manylogs/
+🌐 **Live Site:** https://2manytabs.github.io/2manylogs/
