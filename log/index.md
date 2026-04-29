@@ -7,6 +7,7 @@ nav_order: 3
 ---
 
 # all_logs
+
 {% assign logs = site.pages
   | where_exp: "p", "p.url contains '/log/'"
   | sort: "date"
